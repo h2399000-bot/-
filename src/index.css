@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+    background-color: #f8fafc;
+    color: #0f172a;
+  }
+}
+
+/* Custom glowing effects and purple accents for Modern Light */
+.purple-glow {
+  box-shadow: 0 10px 30px -5px rgba(124, 58, 237, 0.15);
+}
+
+.purple-glow-sm {
+  box-shadow: 0 4px 15px -3px rgba(124, 58, 237, 0.12);
+}
+
+.purple-gradient-text {
+  background: linear-gradient(135deg, #6d28d9 0%, #7c3aed 50%, #4f46e5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.purple-border-gradient {
+  border-image: linear-gradient(to right, #7c3aed, #4f46e5) 1;
+}
+
+/* Custom light scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7c3aed;
+}
+
+
