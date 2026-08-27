@@ -7,23 +7,20 @@ import { StatsSection } from './components/StatsSection';
 import { AboutSection } from './components/AboutSection';
 import { EducationSection } from './components/EducationSection';
 import { ConsultingSection } from './components/ConsultingSection';
-import { NewsSection } from './components/NewsSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { ProgramDetailModal } from './components/ProgramDetailModal';
 import { ProgramApplyModal } from './components/ProgramApplyModal';
 import { ConsultingModal } from './components/ConsultingModal';
-import { NoticeDetailModal } from './components/NoticeDetailModal';
 import { ShareModal } from './components/ShareModal';
 import { AdminDashboard } from './components/AdminDashboard';
-import { Program, Notice, ConsultingType } from './types';
-import { ArrowUp, CalendarCheck, Settings, MessageSquare, PhoneCall } from 'lucide-react';
+import { Program, ConsultingType } from './types';
+import { ArrowUp, CalendarCheck, Settings } from 'lucide-react';
 
 function MainApp() {
   const [currentSection, setCurrentSection] = useState<string>('home');
   const [selectedProgram, setSelectedProgram] = useState<Program | null>(null);
   const [applyingProgram, setApplyingProgram] = useState<Program | null>(null);
-  const [selectedNotice, setSelectedNotice] = useState<Notice | null>(null);
   const [consultingModalOpen, setConsultingModalOpen] = useState(false);
   const [initialConsultingType, setInitialConsultingType] = useState<ConsultingType>('기업 HRD 컨설팅');
   const [adminOpen, setAdminOpen] = useState(false);
@@ -36,7 +33,7 @@ function MainApp() {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 400);
 
-      const sections = ['home', 'about', 'education', 'consulting', 'news', 'contact'];
+      const sections = ['home', 'about', 'education', 'consulting', 'contact'];
       const scrollPosition = window.scrollY + 200;
 
       for (const sectionId of sections) {
@@ -128,12 +125,7 @@ function MainApp() {
           onOpenConsultingModal={handleOpenConsultingModal}
         />
 
-        {/* 6. News & Notices Section */}
-        <NewsSection
-          onSelectNotice={(notice) => setSelectedNotice(notice)}
-        />
-
-        {/* 7. Contact, Location & FAQ Section */}
+        {/* 6. Contact, Location & FAQ Section */}
         <ContactSection />
 
       </main>
@@ -209,20 +201,13 @@ function MainApp() {
         initialType={initialConsultingType}
       />
 
-      {/* 4. Notice Detail Modal */}
-      <NoticeDetailModal
-        notice={selectedNotice}
-        onClose={() => setSelectedNotice(null)}
-        onShare={() => setShareOpen(true)}
-      />
-
-      {/* 5. Social Share Modal */}
+      {/* 4. Social Share Modal */}
       <ShareModal
         isOpen={shareOpen}
         onClose={() => setShareOpen(false)}
       />
 
-      {/* 6. Full CMS Admin Dashboard Modal */}
+      {/* 5. Full CMS Admin Dashboard Modal */}
       <AdminDashboard
         isOpen={adminOpen}
         onClose={() => setAdminOpen(false)}

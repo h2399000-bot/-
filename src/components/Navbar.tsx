@@ -50,7 +50,6 @@ export const Navbar: React.FC<NavbarProps> = ({
     { id: 'about', label: '기관 소개' },
     { id: 'education', label: '교육 사업' },
     { id: 'consulting', label: '컨설팅' },
-    { id: 'news', label: '공지/소식' },
     { id: 'contact', label: '문의하기' },
   ];
 

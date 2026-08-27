@@ -70,42 +70,32 @@ export const AboutSection: React.FC = () => {
 
       {/* Tab Content 1: Greeting */}
       {activeTab === 'greeting' && (
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-sm animate-in fade-in duration-300">
-          
-          <div className="lg:col-span-4 flex flex-col items-center text-center">
-            <div className="relative mb-5">
-              <div className="w-44 h-44 sm:w-52 sm:h-52 rounded-2xl overflow-hidden border-2 border-purple-200 shadow-xl shadow-purple-900/10 relative">
-                <img 
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" 
-                  alt="한국고용진흥원장"
-                  className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-              <div className="absolute -bottom-3 -right-2 bg-purple-600 text-white p-2 rounded-xl shadow-md">
-                <Award className="w-5 h-5" />
-              </div>
-            </div>
-            <h3 className="text-xl font-extrabold text-slate-900 mb-1">{siteConfig.directorName}</h3>
-            <p className="text-xs text-purple-600 font-semibold mb-3">한국고용진흥원 원장 / 이사장</p>
-            <div className="px-3 py-1 rounded-full bg-purple-50 text-purple-700 border border-purple-200 text-xs font-medium">
-              고용노동 정책 자문위원
-            </div>
-          </div>
-
-          <div className="lg:col-span-8 space-y-4">
+        <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-12 shadow-sm animate-in fade-in duration-300">
+          <div className="max-w-4xl mx-auto space-y-6">
             <div className="flex items-center gap-2 text-purple-600">
               <Quote className="w-6 h-6 rotate-180" />
               <span className="text-xs font-bold uppercase tracking-widest">Director's Message</span>
             </div>
-            <h4 className="text-lg sm:text-2xl font-bold text-slate-900 leading-snug">
+            
+            <h4 className="text-xl sm:text-3xl font-extrabold text-slate-900 leading-snug">
               {siteConfig.directorGreetingTitle}
             </h4>
-            <div className="text-slate-600 text-sm sm:text-base leading-relaxed space-y-3 whitespace-pre-line border-l-2 border-purple-600 pl-4">
+            
+            <div className="text-slate-600 text-sm sm:text-base leading-relaxed space-y-3 whitespace-pre-line border-l-4 border-purple-600 pl-5 py-1">
               {siteConfig.directorGreeting}
             </div>
-          </div>
 
+            <div className="pt-8 mt-6 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <span className="text-xs text-purple-600 font-semibold block mb-0.5">한국고용진흥원 원장 / 이사장</span>
+                <h3 className="text-xl font-black text-slate-900">{siteConfig.directorName}</h3>
+              </div>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-50 text-purple-700 border border-purple-200 text-xs font-semibold self-start sm:self-auto">
+                <Award className="w-4 h-4 text-purple-600" />
+                <span>고용노동 정책 자문위원</span>
+              </div>
+            </div>
+          </div>
         </div>
       )}
 

@@ -88,7 +88,7 @@ export const Footer: React.FC<FooterProps> = ({
           <div className="lg:col-span-3 space-y-3">
             <h4 className="font-bold text-sm text-white">바로가기</h4>
             <ul className="space-y-2">
-              {['home:홈으로', 'about:기관 소개 및 비전', 'education:교육 프로그램', 'consulting:기업/개인 컨설팅', 'news:공지 및 소식', 'contact:문의하기 & 오시는 길'].map((item) => {
+              {['home:홈으로', 'about:기관 소개 및 비전', 'education:교육 프로그램', 'consulting:기업/개인 컨설팅', 'contact:문의하기 & 오시는 길'].map((item) => {
                 const [id, label] = item.split(':');
                 return (
                   <li key={id}>
